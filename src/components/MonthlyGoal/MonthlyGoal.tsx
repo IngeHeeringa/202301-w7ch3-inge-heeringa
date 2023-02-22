@@ -1,4 +1,7 @@
-import { toggleCompleteActionCreator } from "../../store/features/goalsSlice";
+import {
+  deleteMonthlyGoalActionCreator,
+  toggleCompleteActionCreator,
+} from "../../store/features/goalsSlice";
 import { useAppDispatch } from "../../store/hooks";
 import { Goal } from "../../types";
 import MonthlyGoalStyled from "./MonthlyGoalStyled";
@@ -13,6 +16,10 @@ const MonthlyGoal = ({ goal }: MonthlyGoalProps): JSX.Element => {
     dispatch(toggleCompleteActionCreator(goal.id));
   };
 
+  const handleDelete = (id: number) => {
+    dispatch(deleteMonthlyGoalActionCreator(id));
+  };
+
   return (
     <MonthlyGoalStyled>
       <input
@@ -21,6 +28,7 @@ const MonthlyGoal = ({ goal }: MonthlyGoalProps): JSX.Element => {
         onChange={() => handleToggleComplete()}
       />
       <span className={goal.isCompleted ? "completed" : ""}>{goal.title}</span>
+      <button onClick={() => handleDelete(goal.id)}>Delete</button>
     </MonthlyGoalStyled>
   );
 };

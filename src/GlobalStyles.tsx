@@ -41,6 +41,21 @@ const GlobalStyles = createGlobalStyle`
     list-style-type: none;
     padding: 0;
   }
+
+  button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    font-size: 1.2rem;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--secondary-color);
+    }
+  }
 `;
 
 export default GlobalStyles;
