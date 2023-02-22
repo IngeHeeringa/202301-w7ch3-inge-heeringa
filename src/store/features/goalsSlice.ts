@@ -27,6 +27,12 @@ export const goalsSlice = createSlice({
       );
       currentGoals[index].isCompleted = !currentGoals[index].isCompleted;
     },
+    deleteMonthlyGoal: (
+      currentGoals: GoalsState,
+      action: PayloadAction<number>
+    ) => {
+      return currentGoals.filter((goal) => goal.id !== action.payload);
+    },
   },
 });
 
@@ -34,4 +40,5 @@ export const goalsReducer = goalsSlice.reducer;
 export const {
   addMonthlyGoal: addMonthlyGoalActionCreator,
   toggleComplete: toggleCompleteActionCreator,
+  deleteMonthlyGoal: deleteMonthlyGoalActionCreator,
 } = goalsSlice.actions;
