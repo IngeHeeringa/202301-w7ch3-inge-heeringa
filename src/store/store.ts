@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import { goalsSlice } from "./features/goalsSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    goals: goalsSlice.reducer,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;
