@@ -1,3 +1,4 @@
+import AddMonthlyGoalForm from "./components/AddMonthlyGoalForm/AddMonthlyGoalForm";
 import MonthlyGoals from "./components/MonthlyGoals/MonthlyGoals";
 
 const App = (): JSX.Element => {
@@ -5,6 +6,7 @@ const App = (): JSX.Element => {
     <>
       <h1>Monthly Goals</h1>
       <MonthlyGoals />
+      <AddMonthlyGoalForm />
     </>
   );
 };

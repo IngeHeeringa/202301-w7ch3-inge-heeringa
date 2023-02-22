@@ -7,7 +7,7 @@ const MonthlyGoals = (): JSX.Element => {
   });
 
   return (
-    <ul>
+    <ul className="monthly-goals">
       {goals.map((goal: Goal) => (
         <li key={goal.id}>
           <input type="checkbox" checked={goal.completed} />
