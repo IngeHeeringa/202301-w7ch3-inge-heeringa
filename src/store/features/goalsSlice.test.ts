@@ -9,14 +9,14 @@ describe("Given a goalsReducer function", () => {
       const newGoal = {
         id: 1,
         title: "Finish bootcamp",
-        completed: false,
+        isCompleted: false,
       };
 
       const expectedGoals = [
         {
           id: 1,
           title: "Finish bootcamp",
-          completed: false,
+          isCompleted: false,
         },
       ];
 
