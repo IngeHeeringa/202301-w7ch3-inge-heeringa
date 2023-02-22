@@ -12,7 +12,7 @@ export const goalsSlice = createSlice({
       {
         id: currentGoals.length + 1,
         title: action.payload,
-        completed: false,
+        isCompleted: false,
       },
     ],
   },

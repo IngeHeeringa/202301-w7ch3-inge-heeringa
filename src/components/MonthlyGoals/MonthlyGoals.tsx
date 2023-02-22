@@ -1,5 +1,6 @@
 import { useAppSelector } from "../../store/hooks";
 import { Goal } from "../../types";
+import MonthlyGoal from "../MonthlyGoal/MonthlyGoal";
 
 const MonthlyGoals = (): JSX.Element => {
   const goals = useAppSelector((state) => {
@@ -10,8 +11,7 @@ const MonthlyGoals = (): JSX.Element => {
     <ul className="monthly-goals">
       {goals.map((goal: Goal) => (
         <li key={goal.id}>
-          <input type="checkbox" checked={goal.completed} />
-          <span>{goal.title}</span>
+          <MonthlyGoal goal={goal} />
         </li>
       ))}
     </ul>

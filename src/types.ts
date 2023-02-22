@@ -1,7 +1,7 @@
 export interface Goal {
   id: number;
   title: string;
-  completed: boolean;
+  isCompleted: boolean;
 }
 
 export type GoalsState = Goal[];

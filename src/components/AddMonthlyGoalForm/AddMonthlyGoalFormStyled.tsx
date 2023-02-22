@@ -9,14 +9,14 @@ const AddMonthlyGoalFormStyled = styled.form`
     padding: 8px;
     border-radius: 4px;
     border: none;
-    font-size: 16px;
+    font-size: 1.2rem;
   }
 
   button {
     padding: 8px 16px;
     border-radius: 4px;
     border: none;
-    font-size: 16px;
+    font-size: 1.2rem;
     background-color: var(--primary-color);
     color: #fff;
     cursor: pointer;
