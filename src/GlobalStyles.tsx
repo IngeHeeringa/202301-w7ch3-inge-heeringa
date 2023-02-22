@@ -1,4 +1,6 @@
 import { createGlobalStyle } from "styled-components";
+import "@fontsource/inter";
+import "@fontsource/playfair-display";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -33,6 +35,11 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     color: var(--primary-color);
+  }
+
+  ul, ol, li {
+    list-style-type: none;
+    padding: 0;
   }
 `;
 

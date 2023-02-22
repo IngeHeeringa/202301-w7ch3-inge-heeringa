@@ -23,6 +23,7 @@ const AddMonthlyGoalForm = (): JSX.Element => {
         type="text"
         value={newGoalTitle}
         onChange={(event) => setNewGoalTitle(event.target.value)}
+        required
       />
       <button className="add-monthly-goal-form__button">Add Goal</button>
     </AddMonthlyGoalFormStyled>
