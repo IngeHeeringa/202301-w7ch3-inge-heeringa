@@ -7,7 +7,10 @@ export const goalsSlice = createSlice({
   name: "goals",
   initialState: initialState,
   reducers: {
-    addGoal: (currentGoals: GoalsState, action: PayloadAction<string>) => [
+    addMonthlyGoal: (
+      currentGoals: GoalsState,
+      action: PayloadAction<string>
+    ) => [
       ...currentGoals,
       {
         id: currentGoals.length + 1,
@@ -15,8 +18,20 @@ export const goalsSlice = createSlice({
         isCompleted: false,
       },
     ],
+    toggleComplete: (
+      currentGoals: GoalsState,
+      action: PayloadAction<number>
+    ) => {
+      const index = currentGoals.findIndex(
+        (goal) => goal.id === action.payload
+      );
+      currentGoals[index].isCompleted = !currentGoals[index].isCompleted;
+    },
   },
 });
 
 export const goalsReducer = goalsSlice.reducer;
-export const { addGoal: addGoalActionCreator } = goalsSlice.actions;
+export const {
+  addMonthlyGoal: addMonthlyGoalActionCreator,
+  toggleComplete: toggleCompleteActionCreator,
+} = goalsSlice.actions;
