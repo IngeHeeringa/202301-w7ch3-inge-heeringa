@@ -15,6 +15,7 @@ describe("Given a MonthlyGoal component", () => {
         id: 1,
         title: "Finish bootcamp",
         isCompleted: false,
+        weeklyGoals: [],
       };
       const expectedName = "Finish bootcamp";
 

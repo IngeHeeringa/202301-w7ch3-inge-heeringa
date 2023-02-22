@@ -16,11 +16,36 @@ const MonthlyGoalStyled = styled.div`
   }
 
   input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid var(--primary-color);
+    width: 18px;
+    height: 18px;
     margin-right: 8px;
+    position: relative;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  input[type="checkbox"]:checked::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
   }
 
   span {
     flex-grow: 1;
+  }
+
+  .completed {
+    text-decoration: line-through;
   }
 `;
 

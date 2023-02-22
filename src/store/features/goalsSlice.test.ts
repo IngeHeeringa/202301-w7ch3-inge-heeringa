@@ -1,5 +1,9 @@
 import { GoalsState } from "../../types";
-import { addGoalActionCreator, goalsReducer } from "./goalsSlice";
+import {
+  addMonthlyGoalActionCreator,
+  goalsReducer,
+  toggleCompleteActionCreator,
+} from "./goalsSlice";
 
 describe("Given a goalsReducer function", () => {
   describe("When it receives an empty list and an addGoal action with a payload of a new goal title 'Finish bootcamp'", () => {
@@ -20,9 +24,37 @@ describe("Given a goalsReducer function", () => {
         },
       ];
 
-      const addGoalAction = addGoalActionCreator(newGoal.title);
+      const addGoalAction = addMonthlyGoalActionCreator(newGoal.title);
 
       const newGoals = goalsReducer(currentGoals, addGoalAction);
+
+      expect(newGoals).toStrictEqual(expectedGoals);
+    });
+  });
+
+  describe("When it receives a list with one goal named 'Finish bootcamp' and a toggleComplete action with a payload of the id of that goal", () => {
+    test("Then it should return a list with one goal named 'Finish bootcamp' and a positive complete status", () => {
+      const currentGoals = [
+        {
+          id: 1,
+          title: "Finish bootcamp",
+          isCompleted: false,
+        },
+      ];
+
+      const expectedGoals = [
+        {
+          id: 1,
+          title: "Finish bootcamp",
+          isCompleted: true,
+        },
+      ];
+
+      const toggleCompleteAction = toggleCompleteActionCreator(
+        currentGoals[0].id
+      );
+
+      const newGoals = goalsReducer(currentGoals, toggleCompleteAction);
 
       expect(newGoals).toStrictEqual(expectedGoals);
     });
